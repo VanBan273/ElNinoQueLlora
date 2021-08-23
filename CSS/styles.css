@@ -1,0 +1,30 @@
+body { margin:10px; background-image: url("../images/wall.jpg"); }
+
+.container {
+  width:800px;
+  margin:0 auto;
+}
+
+.barra {
+  background-color:#e60d0d;
+  color: #ffffff;
+  font-size: 20px;
+  height: 20px; width: 700px;
+}
+#my_canvas{ 
+  background:#ffffff; 
+  border:#000 1px solid; 
+}
+.boton{
+    color:red;
+    font-size: 40px;
+    background-color: #252222;
+    cursor: pointer;
+    border-radius: 8px;
+    border:2px solid rgb(22, 22, 219);
+    margin: 25px
+}
+.boton:hover{
+    background-color: white;
+    color: #000000;
+}
