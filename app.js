@@ -4,13 +4,17 @@ function initCanvas(){
     let naveImage   = new Image(); 
     let enemigo1  = new Image(); 
     let enemigo2 = new Image(); 
-
+    let misile = new Image();
     
     backgroundImage.src = "/images/background-pic.png"; 
     naveImage.src       = "/images/spaceship-pic.png"; 
     
+    
     enemigo1.src     = "/images/enemigo1 (1).png";
-    enemigo2.src     = "/images/enemigo2 (1).png.png"; 
+    enemigo2.src     = "/images/enemigo2 (1).png"; 
+
+    misile.src = "/images/tear.png"
+   
     
     
     let cW = ctx.canvas.width; 
@@ -28,31 +32,57 @@ function initCanvas(){
         }
     }
 
-    // se supone que crea enemigos
+
+
+
+
+
+
+    
+    // formacion de los enemigos
     let enemies = [
-                   new enemyTemplate({id: "enemy1", x: 100, y: -20, w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy2", x: 225, y: -20, w: 50, h: 30 }),
-                   new enemyTemplate({id: "enemy3", x: 350, y: -20, w: 80, h: 30 }),
-                   new enemyTemplate({id: "enemy4", x:100,  y:-70,  w:80,  h: 30}),
-                   new enemyTemplate({id: "enemy5", x:225,  y:-70,  w:50,  h: 30}),
-                   new enemyTemplate({id: "enemy6", x:350,  y:-70,  w:50,  h: 30}),
-                   new enemyTemplate({id: "enemy7", x:475,  y:-70,  w:50,  h: 30}),
-                   new enemyTemplate({id: "enemy8", x:600,  y:-70,  w:80,  h: 30}),
-                   new enemyTemplate({id: "enemy9", x:475,  y:-20,  w:50,  h: 30}),
-                   new enemyTemplate({id: "enemy10",x: 600, y: -20, w: 50, h: 30}),
+                   new enemyTemplate({id: "MOSCA 1", x: 50, y: -60, w: 50, h: 30, image: enemigo2}),
+                   new enemyTemplate({id: "CACA 1", x: 200, y: -60, w: 50, h: 30 }),
+                   new enemyTemplate({id: "MOSCA 2", x: 320, y: -30, w: 80, h: 30, image: enemigo2 }),
+                   new enemyTemplate({id: "CACA 2", x:80,  y:-170,  w:80,  h: 30}),
+                   new enemyTemplate({id: "MOSCA 3", x:225,  y:-150,  w:50,  h: 30, image: enemigo2}),
+                   new enemyTemplate({id: "CACA 3", x:350,  y:-200,  w:50,  h: 30}),
+                   new enemyTemplate({id: "CACA 4", x:475,  y:-150,  w:50,  h: 30}),
+                   new enemyTemplate({id: "MOSCA 4", x:570,  y:-150,  w:80,  h: 30, image: enemigo2}),
+                   new enemyTemplate({id: "CACA 5", x:475,  y:-60,  w:50,  h: 30}),
+                   new enemyTemplate({id: "CACA 6",x: 600, y: -30, w: 50, h: 30}),
 
                    // Segundo grupo de enemigos
-                   new enemyTemplate({ id: "enemy11", x: 100, y: -220, w: 50, h: 30, image: enemigo2 }),
-                   new enemyTemplate({ id: "enemy12", x: 225, y: -220, w: 50, h: 30, image: enemigo2 }),
-                   new enemyTemplate({ id: "enemy13", x: 350, y: -220, w: 80, h: 50, image: enemigo2 }),
-                   new enemyTemplate({ id: "enemy14", x: 100, y: -270, w: 80, h: 50, image: enemigo2 }),
-                   new enemyTemplate({ id: "enemy15", x: 225, y: -270, w: 50, h: 30, image: enemigo2 }),
-                   new enemyTemplate({ id: "enemy16", x: 350, y: -270, w: 50, h: 30, image: enemigo2 }),
-                   new enemyTemplate({ id: "enemy17", x: 475, y: -270, w: 50, h: 30, image: enemigo2 }),
-                   new enemyTemplate({ id: "enemy18", x: 600, y: -270, w: 80, h: 50, image: enemigo2 }),
-                   new enemyTemplate({ id: "enemy19", x: 475, y: -200, w: 50, h: 30, image: enemigo2 }),
-                   new enemyTemplate({ id: "enemy20", x: 600, y: -200, w: 50, h: 30, image: enemigo2 })
+                   new enemyTemplate({ id: "MOSCA 5", x: 100, y: -420, w: 50, h: 30, image: enemigo2 }),
+                   new enemyTemplate({ id: "MOSCA 6", x: 225, y: -420, w: 50, h: 30, image: enemigo2 }),
+                   new enemyTemplate({ id: "CACA 7", x: 350, y: -420, w: 80, h: 50, }),
+                   new enemyTemplate({ id: "MOSCA 7", x: 100, y: -570, w: 80, h: 50, image: enemigo2 }),
+                   new enemyTemplate({ id: "MOSCA 8", x: 255, y: -570, w: 50, h: 30, image: enemigo2 }),
+                   new enemyTemplate({ id: "MOSCA 8", x: 350, y: -590, w: 50, h: 30,}),
+                   new enemyTemplate({ id: "MOSCA 9", x: 475, y: -570, w: 50, h: 30, image: enemigo2 }),
+                   new enemyTemplate({ id: "MOSCA 10", x: 500, y: -470, w: 80, h: 50, image: enemigo2 }),
+                   new enemyTemplate({ id: "CACA 9", x: 475, y: -400, w: 50, h: 30, }),
+                   new enemyTemplate({ id: "MOSCA 11", x: 600, y: -400, w: 50, h: 30, image: enemigo2 }),
+
+
+
+                   new enemyTemplate({id: "CACA 10", x: 50, y: -860, w: 50, h: 30 }),
+                   new enemyTemplate({id: "CACA 11", x: 200, y: -860, w: 50, h: 30 }),
+                   new enemyTemplate({id: "MOSCA 12", x: 320, y: -830, w: 80, h: 30, image: enemigo2 }),
+                   new enemyTemplate({id: "CACA 12", x:80,  y:-970,  w:80,  h: 30}),
+                   new enemyTemplate({id: "MOSCA 13", x:225,  y:-950,  w:50,  h: 30, image: enemigo2}),
+                   new enemyTemplate({id: "CACA 13", x:350,  y:-1000,  w:50,  h: 30}),
+                   new enemyTemplate({id: "CACA 14", x:475,  y:-950,  w:50,  h: 30}),
+                   new enemyTemplate({id: "MOSCA 14", x:570,  y:-950,  w:80,  h: 30, image: enemigo2}),
+                   new enemyTemplate({id: "CACA 15", x:475,  y:-860,  w:50,  h: 30}),
+                   new enemyTemplate({id: "CACA 16",x: 600, y: -830, w: 50, h: 30}),
+
+
+                   
                   ];
+
+
+                  //añadir mas oleadas
 
   //colisiones
     let renderEnemies = function (enemyList) {
@@ -66,12 +96,13 @@ function initCanvas(){
 
     function Launcher(){
         // bullet location (ubicación de balas)
-        this.y = 500, 
+        this.y = 600, 
         this.x = cW*.5-25, 
-        this.w = 100, 
+        this.w = 90, 
         this.h = 100,   
         this.direccion, 
-        this.bg="white", 
+        this.bg="#87CEEB", 
+        
         this.misiles = [];
 
          // Mensaje (hay que cambiarlo)
@@ -79,7 +110,8 @@ function initCanvas(){
             over: false, 
             message: "",
             fillStyle: 'red',
-            font: 'italic bold 36px Arial, sans-serif',
+            font: 'italic bold 80px Arial, sans-serif',
+            
         }
 
         this.render = function () {
@@ -93,8 +125,7 @@ function initCanvas(){
                 this.y-=5;
             }
             ctx.fillStyle = this.bg;
-            ctx.drawImage(backgroundImage, 10, 10); // background image
-            ctx.drawImage(naveImage,this.x,this.y, 100, 90); // we need to make sure spaceship is at the same location as the bullets
+            ctx.drawImage(naveImage,this.x,this.y, 100, 90,); // isaac y bala en la misma posicion
 
             for(let i=0; i < this.misiles.length; i++){
                 let m = this.misiles[i];
@@ -104,15 +135,15 @@ function initCanvas(){
                     this.misiles.splice(i,1); 
                 }
             }
-            // This happens if you win
+            // VICTORIA
             if (enemies.length === 0) {
                 clearInterval(animateInterval); 
-                ctx.fillStyle = 'yellow';
+                ctx.fillStyle = '#efb810';
                 ctx.font = this.gameStatus.font;
-                ctx.fillText('You win!', cW * .5 - 80, 50);
+                ctx.fillText('VICTORIA', cW * .5 - 200, 400);
             }
         }
-        // Detectar impacto de bullet (bala)
+        // Detectar impacto de bala
         this.hitDetect = function (m, mi) {
             console.log('crush');
             for (let i = 0; i < enemies.length; i++) {
@@ -123,16 +154,16 @@ function initCanvas(){
                    m.y <= e.y+e.h){
                     this.misiles.splice(this.misiles[mi],1); // Remove the missile
                     enemies.splice(i, 1); // Remove the enemy that the missile hit
-                    document.querySelector('.barra').innerHTML = "Destroyed "+ e.id+ " ";
+                    document.querySelector('.barra').innerHTML = e.id+ " " + "APLASTADA";  //METER AQUI EL SCORE
                 }
             }
         }
         // Ask player ship if an enemy has passed or has hit the player ship
         this.hitDetectLowerLevel = function(enemy){
-            // If location of ship is greater than 550 then we know it passed lower level
+            // si las cacas llegan
             if(enemy.y > 760){
                 this.gameStatus.over = true;
-                this.gameStatus.message = 'PERDISTE';
+                this.gameStatus.message = 'NOOB xD';
             }
 
             // Esto detecta un choque de la nave con enemigos
@@ -142,19 +173,19 @@ function initCanvas(){
                 console.log(this.x);
             }
           
-
+             //si te matan
             if ((enemy.y < this.y + 25 && enemy.y > this.y - 25) &&
                 (enemy.x < this.x + 45 && enemy.x > this.x - 45)) { //colisiones
                     this.gameStatus.over = true;
-                    this.gameStatus.message = 'LLORON'
+                    this.gameStatus.message = 'YOU DIED'
                 }
 
             if(this.gameStatus.over === true){  
                 clearInterval(animateInterval); // Stop the game animation loop
-                ctx.fillStyle = this.gameStatus.fillStyle; // set color to text
+                ctx.fillStyle = this.gameStatus.fillStyle; //  color to text
                 ctx.font = this.gameStatus.font;
                 // To show text on canvas
-                ctx.fillText(this.gameStatus.message, cW * .5 - 80, 50); // text x , y
+                ctx.fillText(this.gameStatus.message, cW * .5 - 200, 400); // text x , y
             }
         }
     }
@@ -254,7 +285,7 @@ function initCanvas(){
          }
     });
 
-    // control buttons
+    // botones de abajo
     left_btn.addEventListener('mousedown', function(event) {
         launcher.direccion = 'left';
     });
@@ -282,6 +313,9 @@ function initCanvas(){
     });
 }
 
+
+
 window.addEventListener('load', function(event) {
     initCanvas();
 });
+

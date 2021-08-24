@@ -6,25 +6,31 @@ body { margin:10px; background-image: url("../images/wall.jpg"); }
 }
 
 .barra {
-  background-color:#e60d0d;
-  color: #ffffff;
+  background-color:#efb810;
+  color: #131414;
   font-size: 20px;
-  height: 20px; width: 700px;
+  height: 25px; width: 700px;
 }
 #my_canvas{ 
-  background:#ffffff; 
-  border:#000 1px solid; 
+  background-image: url("../images/background-pic.png"); 
+  
 }
 .boton{
-    color:red;
+    color:#e4ecee;
     font-size: 40px;
-    background-color: #252222;
+    background-color: #efb810;
     cursor: pointer;
-    border-radius: 8px;
-    border:2px solid rgb(22, 22, 219);
-    margin: 25px
+    border-radius: 25px;
+    border:5px solid #8a9597;
+    margin: 12px
+    height: 25px; width: 230px;
+    
+    
 }
 .boton:hover{
     background-color: white;
     color: #000000;
 }
+
+
+
