@@ -139,6 +139,7 @@ function initCanvas(){
             // VICTORIA
             if (enemies.length === 0) {
                 clearInterval(animateInterval); 
+                document.querySelector("#victoria").innerHTML = `<img src="./images/victoria.jpg" alt="victoria">`
                 ctx.fillStyle = '#efb810';
                 ctx.font = this.gameStatus.font;
                 ctx.fillText('VICTORIA', cW * .5 - 200, 400);
