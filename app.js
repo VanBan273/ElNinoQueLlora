@@ -129,7 +129,7 @@ function initCanvas(){
 
             for(let i=0; i < this.misiles.length; i++){
                 let m = this.misiles[i];
-                ctx.fillRect(m.x, m.y-=5, m.w = 20, m.h = 20); // DIRECCION BALA
+                ctx.drawImage(misile, m.x, m.y-=5, m.w = 20, m.h = 20); // DIRECCION BALA
                 this.hitDetect(this.misiles[i],i);
                 if(m.y <= 0){ // DESAPARECE BALA
                     this.misiles.splice(i,1); 
