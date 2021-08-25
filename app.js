@@ -5,6 +5,7 @@ function initCanvas(){
     let enemigo1  = new Image(); 
     let enemigo2 = new Image(); 
     let misile = new Image();
+    let notamuerte = new Image();
     
     backgroundImage.src = "./images/background-pic.png"; 
     naveImage.src       = "./images/spaceship-pic.png"; 
@@ -13,9 +14,9 @@ function initCanvas(){
     enemigo1.src     = "./images/enemigo1 (1).png";
     enemigo2.src     = "./images/enemigo2 (1).png"; 
 
-    misile.src = "./images/tear.png"
-   
-    
+    misile.src = "./images/tear.png";
+  
+    notamuerte.src = "./images/notamuerte.png";
     
     let cW = ctx.canvas.width; 
     let cH = ctx.canvas.height;
@@ -152,13 +153,13 @@ function initCanvas(){
                    m.x <= e.x+e.w && 
                    m.y >= e.y && 
                    m.y <= e.y+e.h){
-                    this.misiles.splice(this.misiles[mi],1); // Remove the missile
-                    enemies.splice(i, 1); // Remove the enemy that the missile hit
+                    this.misiles.splice(this.misiles[mi],1); // quita las balas
+                    enemies.splice(i, 1); // quita los enemigos muertos
                     document.querySelector('.barra').innerHTML = e.id+ " " + "APLASTADA";  //METER AQUI EL SCORE
                 }
             }
         }
-        // Ask player ship if an enemy has passed or has hit the player ship
+        
         this.hitDetectLowerLevel = function(enemy){
             // si las cacas llegan
             if(enemy.y > 760){
@@ -178,10 +179,12 @@ function initCanvas(){
                 (enemy.x < this.x + 45 && enemy.x > this.x - 45)) { //colisiones
                     this.gameStatus.over = true;
                     this.gameStatus.message = 'YOU DIED'
+                    
                 }
 
             if(this.gameStatus.over === true){  
                 clearInterval(animateInterval); // Stop the game animation loop
+                document.querySelector("#notamuerte").innerHTML = `<img src="./images/notamuerte.png" alt="notamuerte">`
                 ctx.fillStyle = this.gameStatus.fillStyle; //  color to text
                 ctx.font = this.gameStatus.font;
                 // To show text on canvas
