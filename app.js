@@ -6,14 +6,14 @@ function initCanvas(){
     let enemigo2 = new Image(); 
     let misile = new Image();
     
-    backgroundImage.src = "/images/background-pic.png"; 
-    naveImage.src       = "/images/spaceship-pic.png"; 
+    backgroundImage.src = "./images/background-pic.png"; 
+    naveImage.src       = "./images/spaceship-pic.png"; 
     
     
-    enemigo1.src     = "/images/enemigo1 (1).png";
-    enemigo2.src     = "/images/enemigo2 (1).png"; 
+    enemigo1.src     = "./images/enemigo1 (1).png";
+    enemigo2.src     = "./images/enemigo2 (1).png"; 
 
-    misile.src = "/images/tear.png"
+    misile.src = "./images/tear.png"
    
     
     
