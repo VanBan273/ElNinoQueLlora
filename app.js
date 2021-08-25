@@ -94,18 +94,18 @@ function initCanvas(){
         }
     }
 
-    function Launcher(){
-        // bullet location (ubicación de balas)
-        this.y = 600, 
+    function Launcher(){  //ubicacion isaac
+        
+        this.y = 600,   
         this.x = cW*.5-25, 
-        this.w = 90, 
+        this.w = 80, 
         this.h = 100,   
         this.direccion, 
         this.bg="#87CEEB", 
         
         this.misiles = [];
 
-         // Mensaje (hay que cambiarlo)
+         // Mensajes
          this.gameStatus = {
             over: false, 
             message: "",
@@ -113,7 +113,7 @@ function initCanvas(){
             font: 'italic bold 80px Arial, sans-serif',
             
         }
-
+         //ISAAC
         this.render = function () {
             if(this.direccion === 'left'){
                 this.x-=5;
@@ -311,11 +311,7 @@ function initCanvas(){
            launcher.misiles.push({x: launcher.x + launcher.w*.5, y: launcher.y, w: 3,h: 10});
         }
     });
-}
+};
 
 
-
-window.addEventListener('load', function(event) {
-    initCanvas();
-});
 

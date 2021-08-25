@@ -9,7 +9,10 @@ body { margin:10px; background-image: url("../images/wall.jpg"); }
   background-color:#efb810;
   color: #131414;
   font-size: 20px;
-  height: 25px; width: 700px;
+  height: 25px;
+   width: 700px;
+  margin: 5px;
+   margin-left: 550px;
 }
 #my_canvas{ 
   background-image: url("../images/background-pic.png"); 
@@ -17,20 +20,48 @@ body { margin:10px; background-image: url("../images/wall.jpg"); }
 }
 .boton{
     color:#e4ecee;
-    font-size: 40px;
+    font-size: 35px;
     background-color: #efb810;
     cursor: pointer;
     border-radius: 25px;
     border:5px solid #8a9597;
-    margin: 12px
-    height: 25px; width: 230px;
+    margin: 12px;
+    height: 50px; 
+    width: 200px;
+    flex-direction: row;
+    
     
     
 }
 .boton:hover{
-    background-color: white;
+    background-color: rgb(17, 184, 226);
     color: #000000;
 }
 
+#start-button{
+  color:#e4ecee;
+  font-size: 35px;
+  background-color: #ef1010;
+  cursor: pointer;
+  border-radius: 25px;
+  border:5px solid #8a9597;
+  margin: 280px;
+  height: 155px; 
+  width: 200px;
+  flex-direction: row;
 
+  
+  
+    
+  
+  
+  
+  
+  
 
+}
+
+#start-button:hover{
+  background-color: #580c0c;
+  color: #efb810 ;
+}
