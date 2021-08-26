@@ -14,21 +14,27 @@
      
 
       <div>
-        <button class="boton" id="left_btn">Izquierda</button>
+        
         <button class="boton" id="fire_btn">Llorar</button>
-        <button class="boton" id="right_btn">Derecha</button>
+        <div>
+          <buttom class="boton" id="start-button">START</buttom>
+        </div>
       </div>
-      <div>
-        <buttom class="boton" id="start-button">START</buttom>
-      </div>
+      
       
     </div>
    
   </body>
 
   
-    
-  <audio src="./Musica/boss.mp3" autoplay ="true" loop="true"></audio>
+  <audio src="./Musica/boss.mp3" autoplay ="true" loop="true" id= "musica"></audio>
+  <script>
+  let audio = document.getElementById("musica") 
+  audio.volume = 0.1
+  </script>
+
+
+  
 
   <script src="./app.js"></script>
   <script src="./index.js"></script>

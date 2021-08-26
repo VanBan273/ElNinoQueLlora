@@ -190,6 +190,8 @@ function initCanvas(){
                 ctx.font = this.gameStatus.font;
                 // To show text on canvas
                 ctx.fillText(this.gameStatus.message, cW * .5 - 200, 400); // text x , y
+
+                document.getElementById("musica").stop() //cambiar a src
             }
         }
     }
@@ -202,8 +204,8 @@ function initCanvas(){
     }
     let animateInterval = setInterval(animate, 6);
     
-    let left_btn  = document.getElementById('left_btn');
-    let right_btn = document.getElementById('right_btn');
+    let left_btn  = document.getElementById('left_btn');  //boton por si acaso
+    let right_btn = document.getElementById('right_btn'); //boton por si acaso
     let fire_btn  = document.getElementById('fire_btn'); 
 
    document.addEventListener('keydown', function(event) {
@@ -290,21 +292,7 @@ function initCanvas(){
     });
 
     // botones de abajo
-    left_btn.addEventListener('mousedown', function(event) {
-        launcher.direccion = 'left';
-    });
-
-    left_btn.addEventListener('mouseup', function(event) {
-        launcher.direccion = '';
-    });
-
-    right_btn.addEventListener('mousedown', function(event) {
-        launcher.direccion = 'right';
-    });
-
-    right_btn.addEventListener('mouseup', function(event) {
-        launcher.direccion = '';
-    });
+    
     //This code below fires bullets (balas)
     fire_btn.addEventListener('mousedown', function(event) {
         launcher.misiles.push({x: launcher.x + launcher.w*.5, y: launcher.y, w: 3, h: 10});
