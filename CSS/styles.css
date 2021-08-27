@@ -21,7 +21,7 @@ body {
   background-image: url("../images/background-pic.png");
 }
 .boton {
-  color: #e4ecee;
+  color: #0ea6cc;
   font-size: 35px;
   background-color: #efb810;
   cursor: pointer;
@@ -30,8 +30,10 @@ body {
   margin: 12px;
   height: 50px;
   width: 650px;
+  margin top: 0px;
+  margin-bottom: 2px;
  
-  flex-direction: row;
+  
 }
 .boton:hover {
   background-color: rgb(17, 184, 226);
@@ -45,10 +47,14 @@ body {
   cursor: pointer;
   border-radius: 25px;
   border: 5px solid #8a9597;
-  margin: 280px;
-  height: 155px;
-  width: 200px;
-  flex-direction: row;
+  margin: 160px;
+  height: 30px;
+  width: 325px;
+  
+  margin-top: 0px;
+  margin-bottom: 0px;
+  
+  
 }
 
 #start-button:hover {
