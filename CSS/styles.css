@@ -1,6 +1,8 @@
 body {
   margin: 10px;
   background-image: url("../images/wall.jpg");
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .container {

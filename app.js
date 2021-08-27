@@ -283,6 +283,7 @@ function initCanvas(){
          if(event.keyCode == 82) // restart game R
          {
           location.reload();
+          
          }
     });
 
@@ -299,3 +300,4 @@ function initCanvas(){
         }
     });
 };
+
